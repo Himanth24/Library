@@ -18,21 +18,19 @@ function addBookToLibrary(book){
 }
 
 function displayBooks(){
+    let i = myLibrary.length-1;
     card.innerHTML += `<div class="item">
-    <div>Title</div>
-    <div>Title1</div>
-    <div>Author</div>
-    <div>Author1</div>
-    <div>Number Of Pages</div>
-    <div>100</div>
-    <div>Read</div>
-    <div>Yes</div>
-    <button>remove</button>
-    <button>Read</button>
-</div>`;
-    for(let i=0;i<myLibrary.length;i++){
-        console.log(myLibrary[i].title);
-    }
+                            <div>Title</div>
+                            <div>${myLibrary[i].title}</div>
+                            <div>Author</div>
+                            <div>${myLibrary[i].author}</div>
+                            <div>Number Of Pages</div>
+                            <div>${myLibrary[i].pages}</div>
+                            <div>Read</div>
+                            <div>${myLibrary[i].status}</div>
+                            <button>remove</button>
+                            <button>Read</button>
+                        </div>`;
 }
 
 form.addEventListener('submit',(event)=>{
