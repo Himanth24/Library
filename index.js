@@ -17,9 +17,43 @@ function addBookToLibrary(book){
     myLibrary.push(book);
 }
 
+function remove(i){
+    myLibrary.splice(i,1);
+    const r = document.querySelector(`.index-${i}`);
+    card.removeChild(r);
+}
+
+function remover(){
+    const r = document.querySelector(`.index-a`);
+    card.removeChild(r);
+}
+
+function read(i){
+    if(myLibrary[i].status === "Yes"){
+        myLibrary[i].status = "No";
+        const s = document.querySelector(`.read-${i}`);
+        s.innerHTML = "No";
+    }
+    else {
+        myLibrary[i].status = "Yes";
+        const s = document.querySelector(`.read-${i}`);
+        s.innerHTML = "Yes";
+    }
+}
+
+function reader(){
+    const s = document.querySelector(`.a`);
+    if(s.innerHTML === "Yes"){
+        s.innerHTML = "No";
+    }
+    else {
+        s.innerHTML = "Yes";
+    }
+}
+
 function displayBooks(){
     let i = myLibrary.length-1;
-    card.innerHTML += `<div class="item">
+    card.innerHTML += `<div class="item index-${i}">
                             <div>Title</div>
                             <div>${myLibrary[i].title}</div>
                             <div>Author</div>
@@ -27,9 +61,9 @@ function displayBooks(){
                             <div>Number Of Pages</div>
                             <div>${myLibrary[i].pages}</div>
                             <div>Read</div>
-                            <div>${myLibrary[i].status}</div>
-                            <button>remove</button>
-                            <button>Read</button>
+                            <div class="read-${i}">${myLibrary[i].status}</div>
+                            <button onclick="remove(${i})">Remove</button>
+                            <button onclick="read(${i})">Read</button>
                         </div>`;
 }
 
@@ -51,3 +85,4 @@ form.addEventListener('submit',(event)=>{
 add_book_btn.addEventListener('click',()=>{
     form_container.removeAttribute('hidden');
 });
+
