@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./index.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -13,7 +14,45 @@
         </div>
     </header>
     <main class="content">
-        <button>Add Book</button>
+        <div class="form-container" hidden>
+            <form class="form">
+                <div class="items">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="items">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="items">
+                    <label for="pages">Pages</label>
+                    <input type="text" id="pages" name="pages" required>
+                </div>
+                <div class="items">
+                    <label for="read">Read</label>
+                    <input type="text" id="read" name="read" required>
+                </div>
+                <div class="buttons">
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div> 
+            </form>
+        </div>
+        <button id="add-book">+ Add Book</button>
+        <div class="books">
+            <div class="item">
+                <div>Title</div>
+                <div>Title1</div>
+                <div>Author</div>
+                <div>Author1</div>
+                <div>Number Of Pages</div>
+                <div>100</div>
+                <div>Read</div>
+                <div>Yes</div>
+                <button>remove</button>
+                <button>Read</button>
+            </div>
+        </div>
     </main>
 </body>
 </html>

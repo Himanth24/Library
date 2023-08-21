@@ -47,6 +47,9 @@ body {
 
 .content{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 button{
@@ -63,3 +66,57 @@ button:hover{
     background-color: var(--white);
 }
 
+.item button:hover,.form button:hover{
+    background-color: var(--grey);
+}
+
+.item{
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4,1fr);
+    row-gap: 15px;
+}
+
+.item button{
+    background-color: var(--light-green);
+}
+
+#add-book{
+    font-weight: bold;
+}
+
+.form{
+    margin: 10px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+}   
+
+.form button{
+    background-color: var(--light-green);
+    padding: auto;
+    margin: auto;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.books{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-flow: row;
+    gap: 20px;
+}
